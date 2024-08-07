@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivy League Admission Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Ivy League Admission Predictor</h1>
+            <img src="{{ url_for('static', filename='university.jpg') }}" alt="university" class="university">
+        </div>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="gre_score">GRE Score:</label>
+                <input type="number" id="gre_score" name="gre_score" step="1" min="0" max="340" placeholder="0-340" required>
+            </div>
+            <div class="form-group">
+                <label for="toefl_score">TOEFL Score:</label>
+                <input type="number" id="toefl_score" name="toefl_score" step="1" min="0" max="120" placeholder="0-120" required>
+            </div>
+            <div class="form-group">
+                <label for="university_rating">University Rating:</label>
+                <input type="number" id="university_rating" name="university_rating" min="1" max="5" placeholder="1-5" required>
+            </div>
+            <div class="form-group">
+                <label for="sop">SOP:</label>
+                <input type="number" id="sop" name="sop" step="1" min="1" max="5" placeholder="1-5" required>
+            </div>
+            <div class="form-group">
+                <label for="lor">LOR:</label>
+                <input type="number" id="lor" name="lor" step="1" min="1" max="5" placeholder="1-5" required>
+            </div>
+            <div class="form-group">
+                <label for="cgpa">CGPA:</label>
+                <input type="number" id="cgpa" name="cgpa" step="1" min="0" max="10" placeholder="1-10" required>
+            </div>
+            <div class="form-group">
+                <label for="research">Research:</label>
+                <input type="number" id="research" name="research" min="0" max="1" placeholder="0 or 1" required>
+            </div>
+            <button type="submit" class="submit-button">Predict</button>
+        </form>
+        <div class="prediction">
+            <h2>{{ prediction_text }}</h2>
+        </div>
+    </div>
+</body>
+</html>
