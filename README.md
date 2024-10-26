@@ -17,7 +17,22 @@ This project is a prototype designed to demonstrate how a predictive model can e
 ---
 ## 2. Project Structure
 
-my_project/ ├── app.py # Main Flask application file ├── Dockerfile # Docker configuration for building and running the app ├── requirements.txt # Python dependencies needed to run the app ├── templates/ # HTML templates for the web pages │ └── index.html # Main HTML template for user input and displaying results ├── static/ # Static files (e.g., CSS, JavaScript) │ └── styles.css # Styling for the web interface ├── models/ # Contains saved models and preprocessing objects │ ├── final_model_with_lor_mean.pkl # Trained model file │ ├── scaler.pkl # Scaler for numerical feature standardization │ └── encoder.pkl # Encoder for categorical data ├── README.md # Documentation file describing the project 
+```
+my_project/
+├── app.py                   # Main Flask application file
+├── Dockerfile               # Docker configuration for building and running the app
+├── requirements.txt         # Python dependencies needed to run the app
+├── templates/               # HTML templates for the web pages
+│   └── index.html           # Main HTML template for user input and displaying results
+├── static/                  # Static files (e.g., CSS, JavaScript)
+│   └── styles.css           # Styling for the web interface
+├── models/                  # Contains saved models and preprocessing objects
+│   ├── final_model_with_lor_mean.pkl   # Trained model file
+│   ├── scaler.pkl           # Scaler for numerical feature standardization
+│   └── encoder.pkl          # Encoder for categorical data
+├── README.md                # Documentation file describing the project
+└── .gitignore               # Specifies files to be ignored in version control
+```
 
 ---
 ## 3. Features
