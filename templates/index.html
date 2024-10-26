@@ -22,17 +22,11 @@
                 <input type="number" id="toefl_score" name="toefl_score" step="1" min="0" max="120" placeholder="0-120" value="{{ request.form.toefl_score }}" required>
             </div>
             <div class="form-group">
-                <label for="university_rating">University Rating:</label>
-                <input type="number" id="university_rating" name="university_rating" min="1" max="5" placeholder="1-5" value="{{ request.form.university_rating }}" required>
-            </div>
-            <div class="form-group">
-                <label for="sop">SOP:</label>
-                <input type="number" id="sop" name="sop" step="1" min="1" max="5" placeholder="1-5" value="{{ request.form.sop }}" required>
-            </div>
-            <div class="form-group">
                 <label for="lor">LOR:</label>
-                <input type="number" id="lor" name="lor" step="1" min="1" max="5" placeholder="1-5" value="{{ request.form.lor }}" required>
+                <input type="number" id="lor" name="lor" step="0.5" min="1" max="5" placeholder="{{ lor_mean }} (default)" value="{{ request.form.lor }}">
+                <small class="note">Note: If left blank, the average value ({{ lor_mean }}) will be used for LOR.</small>
             </div>
+            
             <div class="form-group">
                 <label for="cgpa">CGPA:</label>
                 <input type="number" id="cgpa" name="cgpa" step="1" min="0" max="10" placeholder="1-10" value="{{ request.form.cgpa }}" required>

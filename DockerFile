@@ -1,1 +1,29 @@
-    
+# Stage 1: Use Python Slim to install dependencies and set up the application
+FROM python:3.11.5-slim AS build-stage
+
+# Set the working directory
+WORKDIR /app
+
+# Copy requirements file and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the application code to the container
+COPY . .
+
+# Stage 2: Use Python Alpine for a smaller final image
+FROM python:3.11.5-alpine AS final-stage
+
+# Set the working directory
+WORKDIR /app
+
+# Copy only necessary parts from the build stage
+COPY --from=build-stage /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+COPY --from=build-stage /usr/local/bin /usr/local/bin
+COPY --from=build-stage /app .
+
+# Expose port 
+EXPOSE 3001
+
+# Run the Flask application using the Python command
+CMD ["python3", "app.py"]
