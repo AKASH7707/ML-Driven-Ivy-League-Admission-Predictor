@@ -49,5 +49,32 @@ def predict():
     except Exception as e:
         return render_template('index.html', prediction_text=f'Error: {str(e)}')
 
+# API route for prediction
+@app.route('/api/predict', methods=['POST'])
+def api_predict():
+    try:
+        # Get JSON input data
+        data = request.json
+
+        # Create DataFrame
+        input_df = pd.DataFrame([data])
+        
+        # Scale the new input data
+        input_df[['GRE Score', 'TOEFL Score', 'CGPA']] = scaler.transform(input_df[['GRE Score', 'TOEFL Score', 'CGPA']])
+        
+        # Encode the ordinal features
+        input_df[['University Rating', 'SOP', 'LOR']] = encoder.transform(input_df[['University Rating', 'SOP', 'LOR']])
+        
+        # Predict with the loaded model
+        new_prediction = model.predict(input_df)
+        new_prediction = np.clip(new_prediction, 0, 1)  # Clip prediction to ensure it's within the range [0, 1]
+        
+        result = {
+            "admission_probability": round(float(new_prediction * 100), 2)
+        }
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
 if __name__ == "__main__":
     app.run(debug=True)
