@@ -34,7 +34,7 @@ h1 {
     margin: 0;
     padding-bottom: 30px;
 }
-
+ 
 .form-group {
     margin: 15px 0;
     text-align: left;
@@ -69,12 +69,12 @@ input[type="number"] {
 .submit-button:hover {
     background: #d66f00;
 }
-/* 
+
 .prediction h2 {
     color: #ea7d11;
     border-color: #d66f00;
     margin-top: 20px;
-} */
+}
 
 .prediction{
     width: 100%;
@@ -146,3 +146,21 @@ h2 {
     background: #bbb;
 }
 
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.footer a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+}
+.footer a:hover {
+    color: #ffcc00;
+}

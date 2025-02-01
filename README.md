@@ -1,6 +1,6 @@
 # ML-Driven Ivy League Admission Predictor
 
-## Introduction
+## 1. Introduction
 
 ### 1.1 Problem Statement
 
@@ -30,8 +30,7 @@ my_project/
 │   ├── final_model_with_lor_mean.pkl   # Trained model file
 │   ├── scaler.pkl           # Scaler for numerical feature standardization
 │   └── encoder.pkl          # Encoder for categorical data
-├── README.md                # Documentation file describing the project
-└── .gitignore               # Specifies files to be ignored in version control
+└──  README.md                # Documentation file describing the project
 ```
 
 ---
@@ -81,7 +80,7 @@ This project uses a Linear Regression machine learning model trained to estimate
 
 ## 7. Future Work
 
-> In the later stages, Docker integration will be fully completed to make deployment smoother. For now, the app can be run using the flask run command. Additional steps to complete Docker integration will be documented here.
+- In the later stages, Docker integration will be fully completed to make deployment smoother. For now, the app can be run using the flask run command. Additional steps to complete Docker integration will be documented here.
 
 ---
 
