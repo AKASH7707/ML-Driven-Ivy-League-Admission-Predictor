@@ -84,9 +84,3 @@ This project uses a Linear Regression machine learning model trained to estimate
 - In the later stages, Docker integration will be fully completed to make deployment smoother. For now, the app can be run using the flask run command. Additional steps to complete Docker integration will be documented here.
 
 ---
-
-## 8. License
-
-This project is licensed under the **MIT License**. See LICENSE for more information.
-
----
