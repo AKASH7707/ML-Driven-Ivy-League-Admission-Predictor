@@ -1,4 +1,5 @@
 # ML-Driven Ivy League Admission Predictor
+![ivy_admission_predictor](https://github.com/user-attachments/assets/edbb33dd-66f6-4172-8512-85a233bc0688)
 
 ## 1. Introduction
 
